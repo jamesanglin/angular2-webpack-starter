@@ -1,0 +1,22 @@
+<app-nav></app-nav>
+
+<div class="container">
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<div class="container">
+    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
+</div>
+
+<div id="footer" class="container">
+    <div class="row text-center">
+        <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
+        <div>
+            <a [href]="url">
+                <img [src]="angularclassLogo" width="15%">
+            </a>
+        </div>
+    </div>
+</div>

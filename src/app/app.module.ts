@@ -33,6 +33,7 @@ import '../styles/styles.scss';
 import '../styles/headings.css';
 
 import { AlertModule, DatepickerModule } from 'ng2-bootstrap';
+import { NavComponent } from './nav/nav.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -56,7 +57,8 @@ type StoreType = {
     AboutComponent,
     HomeComponent,
     NoContentComponent,
-    XLargeDirective
+    XLargeDirective,
+    NavComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
