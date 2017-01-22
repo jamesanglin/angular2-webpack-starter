@@ -31,6 +31,7 @@ import { XLargeDirective } from './home/x-large';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
+import 'jquery';
 import 'bootstrap-sass';
 
 import { NavComponent } from './nav/nav.component';

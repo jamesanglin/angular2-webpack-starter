@@ -113,10 +113,8 @@ module.exports = function (options) {
           test: /\.scss$/,
           use: ['style-loader', 'css-loader', 'sass-loader'],
           include: [helpers.root('src', 'styles')]
-        },
-
+        }
       ]
-
     },
 
     plugins: [
@@ -164,12 +162,7 @@ module.exports = function (options) {
             '@angular/http',
             '@angular/router',
             '@angularclass/hmr',
-            'rxjs',
-            'jquery',
-            {
-              name: 'bootstrap-sass',
-              path: 'bootstrap-sass/assets/javascripts/bootstrap.js'
-            }
+            'rxjs'
           ]
         },
         dllDir: helpers.root('dll'),

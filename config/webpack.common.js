@@ -18,6 +18,7 @@ const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 const HtmlElementsPlugin = require('./html-elements-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
+const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const ngcWebpack = require('ngc-webpack');
 
@@ -169,7 +170,11 @@ module.exports = function (options) {
         {
           test: /\.(woff2?|ttf|eot|svg)$/,
           loader: 'url-loader?limit=10000'
-        }
+        },
+
+        /** For bootstrap javascript components.
+        */
+        { test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery' },
       ],
 
     },
@@ -332,8 +337,18 @@ module.exports = function (options) {
         disabled: !AOT,
         tsConfig: helpers.root('tsconfig.webpack.json'),
         resourceOverride: helpers.root('config/resource-override.js')
-      })
+      }),
 
+      /**
+      * Plugin: ProvidePlugin
+      * Description: Provides the jquery plugin anywher $ or jQuery is referenced.
+      * Needed for bootstrap javascript components(Modal, tooltip, etc) to work properly.
+      * See: http://stackoverflow.com/questions/28969861/managing-jquery-plugin-dependency-in-webpack
+      */
+      new ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
+      })      
     ],
 
     /*
