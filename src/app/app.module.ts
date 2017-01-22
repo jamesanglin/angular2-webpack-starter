@@ -32,7 +32,6 @@ import { XLargeDirective } from './home/x-large';
 import '../styles/styles.scss';
 import '../styles/headings.css';
 
-import { AlertModule, DatepickerModule } from 'ng2-bootstrap';
 import { NavComponent } from './nav/nav.component';
 
 // Application wide providers
@@ -64,9 +63,7 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
-    AlertModule.forRoot(),
-    DatepickerModule.forRoot()
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
