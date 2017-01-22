@@ -165,6 +165,11 @@ module.exports = function (options) {
             '@angular/router',
             '@angularclass/hmr',
             'rxjs',
+            'jquery',
+            {
+              name: 'bootstrap-sass',
+              path: 'bootstrap-sass/assets/javascripts/bootstrap.js'
+            }
           ]
         },
         dllDir: helpers.root('dll'),
