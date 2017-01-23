@@ -13,9 +13,9 @@ describe('App', () => {
     expect(subject).toEqual(result);
   });
 
-  it('should have `your content here` x-large', () => {
-    let subject = element(by.css('[x-large]')).getText();
-    let result  = 'Your Content Here';
+  it('should have `Home` h1', () => {
+    let subject = element(by.css('h1')).getText();
+    let result  = 'Home';
     expect(subject).toEqual(result);
   });
 
